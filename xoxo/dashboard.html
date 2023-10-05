@@ -1,0 +1,1105 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=1">
+    <!-- css -->
+    <link rel="shortcut icon" href="https://maticx.gold/img/logo.png" type="">
+    
+<script>
+        var account = localStorage.getItem("address");
+
+        if (account == null) {
+            alert("You are not Logged In. Please Login first..!!");
+           location.href = "https://maticx.gold/xgold/signin";
+        }
+    </script>
+<!-- Title -->
+    <title>MATICxGOLD</title>
+  <!-- Bootstrap css -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Style css -->
+  <link href="https://maticx.gold/php/Content/assets/css/style.css" rel="stylesheet" />
+
+  <!-- Default css -->
+  <link href="https://maticx.gold/php/Content/assets/css/default.css" rel="stylesheet">
+
+  <!-- Sidemenu css-->
+  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/plugins/sidemenu/sidemenu.css">
+
+  <!-- Bootstrap-daterangepicker css -->
+  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.css">
+
+  <!-- Bootstrap-datepicker css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css">
+
+  <!-- Custom scroll bar css -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+  <!-- Sidemenu-repsonsive-tabs  css -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css" rel="stylesheet">
+
+  <!-- P-scroll css -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll.css" rel="stylesheet" type="text/css">
+
+  <!-- Nice-select css  -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+               
+  <!-- Select2 Plugin -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+
+  <!-- News-Ticker css-->
+  <link href="https://maticx.gold/php/Content/assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
+
+  <!-- Font icons css-->
+  <link href="https://maticx.gold/php/Content/assets/css/icons.css" rel="stylesheet">
+
+  <!-- Rightsidebar css -->
+  <link href="https://maticx.gold/php/Content/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+  <!-- Color-palette css-->
+  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/css/skins.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+    <script src="https://polygonscan.com/assets/js/custom/web3-eth.min.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>  
+
+    
+    <style>
+        .app-content {
+            margin-top: 100px;
+        }
+    </style>
+<script> 
+var totalearned = 0;
+function getVariableData() {
+    // get variable values
+    myContractInstance.methods.pool1currUserID().call().then(function (result) {
+        console.log('pool1users',result)
+        $('.Pool1count').html(result);
+        $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool2currUserID().call().then(function (result) {
+        
+        $('.Pool2count').html(result);
+        $('.pool2_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool3currUserID().call().then(function (result) {
+       
+            $('.Pool3count').html(result);
+        $('.pool3_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool4currUserID().call().then(function (result) {
+       
+         $('.Pool4count').html(result);
+        $('.pool4_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result+ "</a>");
+    });
+    
+    myContractInstance.methods.currUserID().call().then(function (result) {
+    
+       
+            $('.TotalUsers').html(result);
+
+    });
+
+    myContractInstance.methods.users(account).call().then(function (result1) {
+        
+            $('.currentuseridlink').html("https://maticx.gold/xgold/signup?referralid=" + result1.id);
+
+
+
+
+            $('.currentuseridlink').val("https://maticx.gold/xgold/signup?referralid=" + result1.id);
+
+
+
+
+            $('.sharebutton').attr('data-url', "https://maticx.gold/xgold/signup?referralid=" + result1.id);
+            $('.currentuserid').html(result1.id);
+            $('.currentaddress').html(account);
+            $('.ethaddress').attr('href', 'https://polygonscan.com/address/' + account);
+        
+    });
+
+    
+
+
+    if (account !== 'undefined') {
+        getReferralCommission();
+        getPoolPaymentReceived();
+
+   
+    }
+    
+
+
+    
+
+    
+    
+    DirectreferralCount();
+}
+
+
+
+
+function getReferralCommission() {
+    
+
+    var level1 = parseFloat(5); var level2 = parseFloat(0.05); var level3 = parseFloat(0.05); var level4 = parseFloat(0.05);
+
+    var referraltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', { filter: { _user: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+        
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+
+                if (level == 1) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("5");
+
+                }
+                else if (level == 2) {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.05");
+                }
+                else if (level == 3) {
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.05");
+
+                }
+                else {
+
+                    referraltotal = parseFloat(referraltotal) + parseFloat("0.05");
+
+                }
+
+                $('.totalreferral').html(Math.round(1000000 * (referraltotal)) / 1000000);
+            });
+           
+        }
+    });
+
+}
+
+
+function getPoolPaymentReceived() {
+    var pool1_price = 10;
+    var pool2_price = 50;
+    var pool3_price = 100;
+    var pool4_price = 500;
+    
+
+    var referraltotal = parseFloat(0);
+
+    var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                var level = value.returnValues._level;
+
+                if (level == 1) {
+                    referraltotal = parseFloat(referraltotal) + pool1_price;
+                }
+                else if (level == 2) {
+                    referraltotal = parseFloat(referraltotal) + pool2_price;
+                }
+                else if (level == 3) {
+                    referraltotal = parseFloat(referraltotal) + pool3_price;
+                }
+                else if (level == 4) {
+                    referraltotal = parseFloat(referraltotal) + pool4_price;
+                }
+                
+
+
+                $('.totalpoolpayment').html(Math.round(1000000 * (referraltotal)) / 1000000);
+            });
+        }
+    });
+    
+
+    
+}
+
+var templevel = 1, t = 1;
+var employees = {
+    accounting: []
+};
+var str = "";
+//'0xb78550c3f3d3f0553b9517a545e58500de13dffe'
+function Directreferral() {
+    
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+
+        if (!error) {
+
+            $.each(log, function (key, value) {
+                if (t == 1) {
+                    t = 2;
+                    $('#accordion11').html("");
+                    $('#accordion11').append('<div class="panel-heading1 bg-primary ">' +
+                        '<h4 class= "panel-title1">' +
+                        '<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion11" href="#collapseFour11" aria-expanded="false"><i class="fe fe-arrow-right mr-2"></i>Level 1</a>' +
+                        '</h4 >' +
+                        '</div >' +
+                        '<div id="collapseFour11" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">' +
+                        '<div class= "panel-body border" ></div></div></div>')
+                        ;
+
+                }
+                $('#collapseFour11 .panel-body').append('<p style=color:green>' + value.returnValues._user + '</p>');
+
+                employees.accounting.push({
+
+                    'address': value.returnValues._user,
+                    "level": 1
+
+                });
+
+                InDirectreferral(value.returnValues._user, 2)
+            });
+        }
+        else {
+
+            $('#accordion11').append('No data');
+                ;
+        }
+    });
+}
+
+
+function InDirectreferral(address, level) {
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                if (templevel != level) {
+                    str += '';
+                }
+                if (templevel != level) {
+                    templevel = level;
+                    $('#accordion11').append('<div class="panel-heading1 bg-primary ">' +
+                        '<h4 class= "panel-title1">' +
+                        '<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1' + level + '" href="#collapseFour1' + level + '" aria-expanded="false"><i class="fe fe-arrow-right mr-2"></i>Level ' + level + '</a>' +
+                        '</h4 >' +
+                        '</div >' +
+                        '<div id="collapseFour1' + level + '" class="panel-collapse collapse" role="tabpanel" aria-expanded="false">' +
+                        '<div class= "panel-body border" ></div></div></div>')
+                        ;
+                }
+                $('#collapseFour1' + level + ' .panel-body').append('<p style=color:green>' + value.returnValues._user + '</p>');
+
+                employees.accounting.push({
+
+                    'address': value.returnValues._user,
+                    "level": level
+
+                });
+                InDirectreferral(value.returnValues._user, level + 1);
+            });
+        }
+    });
+}
+
+function DirectreferralCount() {
+    
+    var i = 1;
+    $('.referralcount').html(0);
+    $('.indirect_referralcount').html(0);
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+       
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.referralcount').html(i++);
+
+                InDirectreferralCount(value.returnValues._user, 1)
+            });
+        }
+        else {
+            $('.referralcount').html(0);
+            $('.indirect_referralcount').html(0);
+        }
+    });
+     
+}
+var count = 1;
+
+function InDirectreferralCount(address, level) {
+    
+    var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: address },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+      
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.indirect_referralcount').html(count++);
+                InDirectreferralCount(value.returnValues._user, level + 1);
+            });
+        }
+        else {
+            $('.indirect_referralcount').html(0);
+        }
+    });
+
+}
+
+
+function Transaction_Register() {
+    
+    var events = myContractInstance.getPastEvents('getMoneyForLevelEvent', {filter:{ _user: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
+        var level1 = parseFloat(5); var level2 = parseFloat(0.05); var level3 = parseFloat(0.05); var level4 = parseFloat(0.05);
+
+        if (!error) {
+            $.each(log, function (key, value) {
+                
+                $('.autopool_table').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
+            });
+        }
+    });
+}
+
+
+function Transaction_Pool() {
+    var events = myContractInstance.getPastEvents('getPoolPayment', {filter:{ _receiver: account },  'fromBlock': 0, 'toBlock': 'latest' }, function (error, log) {
+        var pool1_price = 10;
+        var pool2_price = 50;
+        var pool3_price = 100;
+        var pool4_price = 500;
+        
+       
+        if (!error) {
+            $.each(log, function (key, value) {
+                $('.transaction_autopool').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
+            });
+        }
+    });
+}
+</script>
+       
+
+<script>
+
+var myContractInstance, myContractInstance1;
+var account = localStorage.getItem("address");
+
+var abi = [{"constant":false,"inputs":[],"name":"buyPool1","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool4","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool7","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool2","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool8","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool9","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool6","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool3","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool10","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"buyPool5","outputs":[],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"}];
+var address = "0xb78550c3f3d3f0553b9517a545e58500de13dffe";
+var MyContract;
+window.addEventListener('load', function () {
+    if (typeof web3 !== 'undefined') {
+
+       
+        web3 = new Web3(web3.currentProvider);
+
+        MyContract = new web3.eth.Contract(abi, address);
+        // initiate contract for an address
+
+        myContractInstance = MyContract;
+        myContractInstance1 = MyContract;
+        //web3.eth.getAccounts().then(function (result) {
+        //    account = result[0];
+           
+        //});
+        
+        if (web3.currentProvider.isTrust) {
+
+            const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
+            const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+            MyContract = new web3.eth.Contract(abi, address);
+            myContractInstance = MyContract;
+          
+        }
+        checkbuyLevel();
+  getVariableData();
+
+           
+
+    } else {
+        //  const Web3 = require('web3');
+
+        const infura = 'https://polygon-mainnet.infura.io/v3/c2b1f9ce72254350a04f5759c898c8b3';
+        const web3 = new Web3(new Web3.providers.HttpProvider(infura));
+        MyContract = new web3.eth.Contract(abi, address);
+        myContractInstance = MyContract;
+
+           getVariableData();
+
+            checkbuyLevel();
+        // document.getElementById('output').innerHtml = 'Please download and install Metamask: <a href="https://metamask.io/">https://metamask.io/</a>'
+    }
+
+
+})
+
+
+function checkbuyLevel() {
+
+    myContractInstance.methods.users(account).call().then(function (result) {
+     
+       
+            if (result[0]) {
+                checkPool1();
+                checkPool2();
+                checkPool3();
+                checkPool4();
+            }
+       
+
+    });
+
+}
+
+function checkPool1() {
+
+
+
+    myContractInstance.methods.pool1users(account).call().then(function (result) {
+        if(result[1] > 0){
+        $('#pool1sequencue').text(result[1])
+        $('#pool1sequencue').show();
+        $('.pool1sequencue').show();}
+       
+            if (!result[0]) {
+                $('.pool1pay').show();
+                $('.pool1transaction').hide();
+            }
+            else if (result[2] == 2) {
+                $('.pool1status').show();
+                $('.pool1status .card-status').addClass('bg-success');
+                $('.pool1status .ribbon').addClass('text-success').html('<span class="bg-success">Done</span>');
+                $('.pool1transaction').html('No. of Payments Received ' + result[2]);
+
+
+            }
+            else if (result[2]< 2) {
+                $('.pool1status').show();
+                $('.pool1status .card-status').addClass('bg-warning');
+                $('.pool1status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool1transaction').html('No. of Payments Received ' + result[2]);
+                $('.currentautopoolno').html(1);
+            }
+
+
+       
+
+    });
+
+}
+
+function checkPool2() {
+
+    myContractInstance.methods.pool2users(account).call().then(function (result) {
+   
+        if(result[1] > 0){
+            $('#pool2sequencue').text(result[1])
+            $('#pool2sequencue').show();
+            $('.pool2sequencue').show();
+        }
+       
+            if (!result[0]) {
+                $('.pool2pay').show();
+                $('.pool2transaction').hide();
+            }
+            else if (result[2] == 4) {
+                $('.pool2status').show();
+                $('.pool2status .card-status').addClass('bg-success');
+                $('.pool2status .ribbon').addClass('text-success').html('<span class="bg-success">Done</span>');
+                $('.pool2transaction').html('No. of Payments Received ' + result[2]);
+
+
+            }
+            else if (result[2] < 4) {
+                $('.pool2status').show();
+                $('.pool2status .card-status').addClass('bg-warning');
+                $('.pool2status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool2transaction').html('No. of Payments Received ' + result[2]); $('.currentautopoolno').html(2);
+                console.log("ok")
+                $('#numbersec').show()
+                
+            }
+
+
+
+     
+    });
+
+}
+
+function checkPool3() {
+
+
+    myContractInstance.methods.pool3users(account).call().then(function (result) {
+        console.log("pool3users",result)
+        if(result[1] > 0){
+        $('#pool3sequencue').text(result[1])
+        $('#pool3sequencue').show();
+        $('.pool3sequencue').show();}
+            if (!result[0]) {
+                $('.pool3pay').show();
+                $('.pool3transaction').hide();
+            }
+            else if (result[2] == 8) {
+                $('.pool3status').show();
+                $('.pool3status .card-status').addClass('bg-success');
+                $('.pool3status .ribbon').addClass('text-success').html('<span class="bg-success">Done</span>');
+                $('.pool3transaction').html('No. of Payments Received ' + result[2]);
+
+
+            }
+            else if (result[2] < 8) {
+                $('.pool3status').show();
+                $('.pool3status .card-status').addClass('bg-warning');
+                $('.pool3status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool3transaction').html('No. of Payments Received ' + result[2]); $('.currentautopoolno').html(3);
+            }
+
+
+
+        
+    });
+
+}
+
+
+function checkPool4() {
+    myContractInstance.methods.pool4users(account).call().then(function (result) {
+        if(result[1] > 0){
+        $('#pool4sequencue').text(result[1])
+        $('#pool4sequencue').show();
+        $('.pool4sequencue').show();}
+       
+            if (!result[0]) {
+                $('.pool4pay').show();
+                $('.pool4transaction').hide();
+            }
+            else if (result[2] == 16) {
+                $('.pool4status').show();
+                $('.pool4status .card-status').addClass('bg-success');
+                $('.pool4status .ribbon').addClass('text-success').html('<span class="bg-success">Done</span>');
+                $('.pool4transaction').html('No. of Payments Received ' + result[2]);
+
+
+            }
+            else if (result[2] < 16) {
+                $('.pool4status').show();
+                $('.pool4status .card-status').addClass('bg-warning');
+                $('.pool4status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
+                $('.pool4transaction').html('No. of Payments Received' + result[2]); $('.currentautopoolno').html(4);
+            }
+    });
+
+}
+
+   
+
+$(document).ready(function () {
+    $('.pool1pay').click(function (demo) {
+       
+        try {
+
+            ethereum.enable();
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 10000000000000000000, gas: 300000 })
+                .on('transactionHash', function (hash) {
+                    console.log('------->',hash)
+                    $('.pool1pay').hide();
+                    $('.pool1transaction').show();
+                    $('.pool1transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+              
+            });
+        }
+        catch (err) {
+            console.log(err)
+        }
+    });
+
+
+    $('.pool2pay').click(function () {
+        try {
+            ethereum.enable();
+          
+
+            myContractInstance1.methods.buyPool2().send({ from: account, value: 50000000000000000000, gas: 300000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool2pay').hide();
+                    $('.pool2transaction').show();
+                    $('.pool2transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            console.log(err)
+        }
+    });
+
+    $('.pool3pay').click(function () {
+        try {
+            ethereum.enable();
+
+            myContractInstance1.methods.buyPool3().send({ from: account, value: 100000000000000000000, gas: 300000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool3pay').hide();
+                    $('.pool3transaction').show();
+                    $('.pool3transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+    $('.pool4pay').click(function () {
+        try {
+            ethereum.enable();
+            
+            myContractInstance1.methods.buyPool4().send({ from: account, value: 500000000000000000000, gas: 300000 })
+                .on('transactionHash', function (hash) {
+
+                    $('.pool4pay').hide();
+                    $('.pool4transaction').show();
+                    $('.pool4transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+
+                });
+        }
+        catch (err) {
+            alert('Please download and install Metamask and Loggin to account');
+        }
+    });
+
+});
+</script>
+
+
+
+
+
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+        
+        
+  <script src="https://maticx.gold/php/assets/js/socialjs.js"></script>
+       
+        
+        
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+        socialjs.init({
+            container: '.socialjs',
+            https: true
+        });
+    });
+</script>
+
+<script>
+    function myFunction() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput");
+      
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+
+</script>
+
+<script>
+
+    function myFunction1() {
+        /* Get the text field */
+        var copyText = document.getElementById("myInput1");
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+    }
+</script>
+        <!-- Banner opened -->
+    <div style="background-color:#ff73bf;">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="banner banner-color mt-1">
+                    <div class="col-xl-2 col-lg-3 col-md-12">
+<img src="https://maticx.gold/img/user.png" alt="image" class="image">
+<div class="logoutuser"><img src="https://maticx.gold/img/logout.png" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
+
+                    </div>                    <div class="page-content col-xl-7 col-lg-6 col-md-12">
+                        <h3 class="mb-1">Your Referral Code : <span class="currentuserid"></span></h3>
+                        <input class="currentuseridlink" type="text" id="myInput" style="opacity:0; height:0px;" />
+                        <input class="currentuseridlinknew" type="text" id="myInput1" style="opacity:0; height:0px;"/>
+                      <p class="mb-0 fs-16">Your Referral Link : <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
+                      <p class="mb-0 fs-16"><a class="ethaddress" href="" target="_blank"> <span class="currentaddress"></span> <i class="fa fa fa-external-link"></i></a></p>
+                    </div>
+                   </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
+                  <center>
+          <div class="logoutuser">
+            <img border="0" data-original-height="225" data-original-width="581" height="39" src="https://maticx.gold/img/logout.png" width="100" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
+ </center>      
+        </div>
+              <!-- row opened -->
+            <center>
+                                                  <div style="background-color:#ff73bf;">
+        <div class="row">
+          <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#000000;">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Direct Referral</p>
+                                <h2 class="mb-1 "><span class="referralcount">00</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#ffffff;">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Referral Income</p>
+                                <h2 class="mb-1 "><span class="totalreferral">0.00</span></h2>                          
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#000000;">
+                    <div class="card-body bg-gradient-success">
+
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Matrix Income</p>
+                                <h2 class="mb-1 "><span class="totalpoolpayment">0.00</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#ffffff;">
+
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Indirect Referral</p>
+                                <h2 class="mb-1 "><span class="indirect_referralcount">00</span></h2>
+                            </div>
+
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                    </center>
+        <!-- row closed -->
+               <!-- row opened -->
+            <center>
+                                                  <div style="background-color:#ff73bf;">
+        <div class="row">
+          <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#000000;">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Matrix 1 Members</p>
+                            <h2 class="mb-1 "><span class="Pool1count"></span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#ffffff;">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Matrix 2 Members</p>
+                            <h2 class="mb-1 "><span class="Pool2count"></span></h2>                 
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#000000;">
+                    <div class="card-body bg-gradient-success">
+
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Matrix 3 Members</p>
+                            <h2 class="mb-1 "><span class="Pool3count"></span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#ff73bf;color:#ffffff;">
+
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="center">
+                                <p class="mb-2 h6">Matrix 4 Members</p>
+                            <h2 class="mb-1 "><span class="Pool4count"></span></h2>
+                            </div>
+
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                    </center>
+        <!-- row closed -->
+                      <!-- Banner opened -->   
+              <!-- row opened -->
+                                  <center>
+                                    <div style="background-color:#ff73bf;">
+                  <div class="row ">
+            <div class="col-md-3 col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool1status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">Matrix - 1</span></h1>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title font-weight-bold">10 MATIC</h2>
+                        <p class="mb-5">No Referral Compulsory</p>
+                        <p class="mb-5 pool1sequencue" style="display: none;">Your Sequence Number : <strong id="pool1sequencue"></strong> </p>
+                        <button type="button" class="btn btn-primary pool1pay">Buy</button>
+                        <p class="pool1transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool2status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">Matrix - 2</span></h1>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title font-weight-bold">50 MATIC</h2>
+                        <p class="mb-5">1 Referral Compulsory</p>
+                      <p class="mb-5 pool2sequencue" style="display: none;">Your Sequence Number : <strong id="pool2sequencue"></strong> </p>
+                        <button type="button" class="btn btn-danger pool2pay">Buy</button>
+                        <p class="pool2transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool3status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">Matrix - 3</span></h1>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title font-weight-bold">100 MATIC</h2>
+                        <p class="mb-5">2 Referral Compulsory</p>
+                      <p class="mb-5 pool3sequencue" style="display: none;">Your Sequence Number : <strong id="pool3sequencue"></strong> </p>
+                        <button type="button" class="btn btn-success pool3pay">Buy</button>
+                        <p class="pool3transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool4status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h1 class="pricing-card-title mb-5"><span class="badge  badge-success">Matrix - 4</span></h1>
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title font-weight-bold">500 MATIC</h2>
+                        <p class="mb-5">3 Referral Compulsory</p>
+                      <p class="mb-5 pool4sequencue" style="display: none;">Your Sequence Number : <strong id="pool4sequencue"></strong> </p>
+                        <button type="button" class="btn btn-success pool4pay">Buy</button>
+                        <p class="pool4transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+                  </div>
+                                </center>
+        <!-- row closed --!>
+
+<style>
+    .pool1pay, .pool2pay, .pool3pay, .pool4pay {
+        display: none
+    }
+
+    .pool1status, .pool2status, .pool3status, .pool4status {
+        display: none
+    }
+</style>
+    <!-- Back-to-top -->
+    <!-- <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a> --!>
+
+            <!-- Jquery-scripts -->
+   <script src="https://maticx.gold//php/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
+
+   <!-- Moment js-->
+   <script src="https://maticx.gold/php/Content/assets/plugins/moment/moment.min.js"></script>
+
+   <!-- Bootstrap-scripts js -->
+   <script src="https://maticx.gold/php/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
+
+   <!-- Sparkline JS-->
+   <script src="https://maticx.gold/net/jquery.sparkline.min.js"></script>
+
+   <!-- Bootstrap-daterangepicker js -->
+   <script src="https://maticx.gold/net/daterangepicker.js"></script>
+
+   <!-- Bootstrap-datepicker js -->
+   <script src="https://maticx.gold/net/bootstrap-datepicker.js"></script>
+
+   <!-- Chart-circle js -->
+   <script src="https://maticx.gold/net/circle-progress.min.js"></script>
+
+   <!-- Rating-star js -->
+   <script src="https://maticx.gold/php/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
+
+   <!-- Custom scroll bar js-->
+   <script src="https://maticx.gold/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+   <!-- P-scroll js -->
+   <script src="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll.js"></script>
+   <script src="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
+
+   <!-- Sidemenu js-->
+   <script src="https://maticx.gold/php/Content/assets/plugins/sidemenu/sidemenu.js"></script>
+
+   <!-- Sidemenu-respoansive-tabs js -->
+   <script src="https://maticx.gold/php/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+
+   <!-- Leftmenu js -->
+   <script src="https://maticx.gold/php/Content/assets/js/left-menu.js"></script>
+
+   <!--Newsticker js-->
+   <script src="https://maticx.gold/net/jquery.jConveyorTicker.js"></script>
+   <script src="https://maticx.gold/php/Content/assets/js/newsticker.js"></script>
+
+   <!-- Chart js-->
+   <script src="https://maticx.gold/php/assets/plugins/chart/chart.min.js"></script>
+                
+   <!-- Nice-select js-->
+   <script src="https://maticx.gold/net/jquery.nice-select.js"></script>
+   <script src="https://maticx.gold/net/nice-select.js"></script>
+
+   <!-- Apexchart js-->
+   <script src="https://maticx.gold/php/Content/assets/js/apexcharts.js"></script>
+
+   <!-- Rightsidebar js -->
+   <script src="https://maticx.gold/net/sidebar.js"></script>
+
+   <!-- Index js-->
+   <script src="https://maticx.gold/net"></script>
+
+   <!-- Custom js-->
+   <script src="https://maticx.gold/net/custom.js"></script>
+   <!--LOgout Js-->
+   
+    
+    <script> 
+     $(document).ready(function() {
+        $('.logoutuser').click(function () {
+        
+            var account = localStorage.removeItem("address", null);
+            location.href = "https://maticx.gold/xgold/signin";
+        });
+    });
+    </script>
+  
+  
+   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+ <script src="https://maticx.gold"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            socialjs.init({
+                container: '.socialjs',
+                https: true
+            });
+        });
+        
+      </script>
+  </section>
+    </div>
+        </div>
+  </head>
+</html>
