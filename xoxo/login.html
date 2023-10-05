@@ -109,6 +109,30 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 							</div>
 		</section>
 
+   <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
+    <!--Font icons-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/flipclock.css">
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold//jawa/swiper.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- END CRYPTO CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/template-counter.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/style.css">
+    <!-- END Custom CSS-->
+
+
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/icon.font.min.css">
+
     <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/util.css">
     <link rel="stylesheet" type="text/css" href="https://maticx.gold/jawa/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -117,7 +141,39 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
     <script src="https://polygonscan.com/assets/js/custom/web3-eth.min.js"></script>
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>                   
     <!--===============================================================================================-->
-                                                             
+    
+    <style>
+       .container-login100 {
+    width: 100%;
+    min-height: 40vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: -webkit-gradient(linear, left top, right top, from(#ff73bf), to(#ff73bf));
+    background: -webkit-linear-gradient(left, #ff73bf, #ff73bf);
+    background: -moz-linear-gradient(left, #ff73bf, #ff73bf);
+    background: -o-linear-gradient(left, #ff73bf, #ff73bf);
+    background-color: linear-gradient(to right, #ff73bf, #ff73bf);
+    background: #ff73bf url();
+    background-size: cover;
+}
+.login100-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 48px 65px ;
+    background-color: #FF0000;
+}
+   </style>                                                               
     
     <script> 
     var myContractInstance;
@@ -422,7 +478,7 @@ $(document).ready(function () {
 
         }
         else {
-            $('.error').html('Enter Valid BNB address');
+            $('.error').html('Enter Valid Matic address');
             $('.error').show();
         }
     });
