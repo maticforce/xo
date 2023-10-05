@@ -281,7 +281,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "https://maticx.gold/xgold/account";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -310,7 +310,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "https://maticx.gold/xgold/account";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -380,7 +380,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "https://maticx.gold/xgold/account";
+                        location.href = "https://xoxonetwork.space/xoxo/dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -405,7 +405,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "https://maticx.gold/xgold/account";
+                            location.href = "https://xoxonetwork.space/xoxo/dashboard";
                         }
                         else {
                             $('.error').html('You need to signup first');
@@ -422,7 +422,7 @@ $(document).ready(function () {
 
         }
         else {
-            $('.error').html('Enter Valid Matic address');
+            $('.error').html('Enter Valid BNB address');
             $('.error').show();
         }
     });
@@ -460,14 +460,14 @@ $(document).ready(function () {
                             <b>Login to Your Account</b><br><br><br>
                         </span>
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Type user name">
-                            <input id="first-name" class="input100" type="text" name="ethaddress" placeholder="Enter Matic address">
+                            <input id="first-name" class="input100" type="text" name="ethaddress" placeholder="Enter BNB address">
                             <span class="focus-input100"></span>
                         </div>
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         <div class="container-login100-form-btn">
                             <button class="btn-success login100-form-btn" id="lgmbtn">
-                                Log In
+                                LogIn
                             </button>
                         </div>
 			    <br>
@@ -475,7 +475,7 @@ $(document).ready(function () {
 			<br>
                         <div class="container-login100-form-btn m-t-5">
                             <button class="btn btn-info w-100 lauto dis-none" id="lgambtn" style="display:none">
-                                Log In  Automatically
+                                LogIn  Automatically
                             </button>
                         </div>
 			    <br>
@@ -484,8 +484,8 @@ $(document).ready(function () {
                         <div class="w-full text-center m-t-30">
 
                             <p class="text-white"><b>Contract address</b></p>
-                            <a href="https://polygonscan.com/address/0x243AF0B6ce6F76E00E634D955218bA2dab27d1bE" class="txt3" target="_blank">
-                                0x243AF0B6ce6F76E00E634D955218bA2dab27d1bE <i class="fa fa-external-link"></i>
+                            <a href="https://bscscan.com/address/0x243AF" class="txt3" target="_blank">
+                                0x243AF <i class="fa fa-external-link"></i>
                             </a>
                         </div>
                     </form> 
