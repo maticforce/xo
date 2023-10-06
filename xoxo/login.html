@@ -22,11 +22,6 @@
     <!-- js -->
     <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
- <div id="facts" class="parallax parallax2 facts">
-             <div class="container inner">
-            <p class="lead main text-center">
-<div class="separator" style="clear: both; text-align: center;"><a href="https://xoxonetwork.space" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="220" data-original-width="452" height="98" src="https://xoxonetwork.space/img/home.png" width="200" /></a></div>
-                 <div class="content-area">
 <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
     <!--Font icons-->
@@ -78,7 +73,7 @@
     background: -moz-linear-gradient(left, #A34FFE, #5934FC);
     background: -o-linear-gradient(left, #A34FFE, #5934FC);
 
-    background: #f9b421 url(img/back.png);
+    background: #f9b421 url(https://xoxonetwork.space/img/back.png);
     background-size: cover;
 }
 .login100-form {
@@ -284,7 +279,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "/Home-Dashboard";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -436,9 +431,7 @@ $(document).ready(function () {
                         <span class="login100-form-title p-b-10 text-white">
                             XOXO NETWORK LOGIN
                         </span>
-                        <div class="w-100">
-                            <img src="/wallet.png" class="w-100 p-b-34" />
-                        </div>
+                       
                         <div class="wrap-input100 validate-input m-b-20" data-validate="Type user name">
                             <input id="first-name" class="input100" type="text" name="ethaddress" placeholder="Enter BNB address 0x...">
                             <span class="focus-input100"></span>
@@ -482,7 +475,7 @@ $(document).ready(function () {
                 </div>
 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="/xoxo7.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
+                    <a href="/xoxo7.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Smart Matrix</a>
                 </div>
                         
                     </form>
@@ -490,7 +483,7 @@ $(document).ready(function () {
                 </div> 
                 <div class="login100-more ">
                     <div class="col-lg-12 m-t-30">
-                        <a href="img/xoxo9.png"> <img src="/matrixlogo.png" class="w-100" /></a>
+                        <a href="https://xoxonetwork.space"> <img src="img/xoxo9.png" class="w-100" /></a>
                     </div>
                     <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
                         <a href="https://metamask.io/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#c011db;border-color:#c0c90d">Download Metamask</a>
