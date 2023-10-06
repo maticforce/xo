@@ -880,6 +880,9 @@ myContractInstance.methods.pool10users(account).call().then(function (result) {
             $('.pool10status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
             $('.pool10transaction').html('Received No. of Payments ' + result[2]); $('.currentautopoolno').html(10);
         }
+    });
+
+}
 
 function checkPool11() {
 
