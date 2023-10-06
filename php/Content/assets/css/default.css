@@ -584,7 +584,7 @@ div.lds-ball2 div {
 /*--loaders--*/
 
 .logo-img{
-	background: url(../images/brand/logo.png);
+	background: url(../img/xoxo9.png);
     display: block;
     position: absolute;
     width: 100%;
@@ -594,7 +594,7 @@ div.lds-ball2 div {
 }
 @media (max-width:320px){
 	.logo-img{
-		background: url(images/brand/favicon.png);
+		background: url(img/xoxo9.png);
 		background-repeat: no-repeat;
 		margin-left: 30px;
 	}
