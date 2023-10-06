@@ -6,68 +6,68 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=1">
     <!-- css -->
-    <link rel="shortcut icon" href="https://maticx.gold/img/logo.png" type="">
+    <link rel="shortcut icon" href="https://xoxonetwork.space/img/logo.png" type="">
     
 <script>
         var account = localStorage.getItem("address");
 
         if (account == null) {
             alert("You are not Logged In. Please Login first..!!");
-           location.href = "https://maticx.gold/xgold/signin";
+           location.href = "https://xoxonetwork.space/xoxo/login";
         }
     </script>
 <!-- Title -->
     <title>MATICxGOLD</title>
   <!-- Bootstrap css -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/bootstrap-4.1.3/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Style css -->
-  <link href="https://maticx.gold/php/Content/assets/css/style.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/css/style.css" rel="stylesheet" />
 
   <!-- Default css -->
-  <link href="https://maticx.gold/php/Content/assets/css/default.css" rel="stylesheet">
+  <link href="https://xoxonetwork.space/php/Content/assets/css/default.css" rel="stylesheet">
 
   <!-- Sidemenu css-->
-  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/plugins/sidemenu/sidemenu.css">
+  <link rel="stylesheet" href="https://xoxonetwork.space/php/Content/assets/plugins/sidemenu/sidemenu.css">
 
   <!-- Bootstrap-daterangepicker css -->
-  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="https://xoxonetwork.space/php/Content/assets/plugins/bootstrap-daterangepicker/daterangepicker.css">
 
   <!-- Bootstrap-datepicker css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.min.css">
 
   <!-- Custom scroll bar css -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.css" rel="stylesheet" />
 
   <!-- Sidemenu-repsonsive-tabs  css -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css" rel="stylesheet">
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/sidemenu-responsive-tabs/css/sidemenu-responsive-tabs.css" rel="stylesheet">
 
   <!-- P-scroll css -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll.css" rel="stylesheet" type="text/css">
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/p-scroll/p-scroll.css" rel="stylesheet" type="text/css">
 
   <!-- Nice-select css  -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
                
   <!-- Select2 Plugin -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/select2/select2.min.css" rel="stylesheet" />
 
   <!-- News-Ticker css-->
-  <link href="https://maticx.gold/php/Content/assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/newsticker/jquery.jConveyorTicker.css" rel="stylesheet" />
 
   <!-- Font icons css-->
-  <link href="https://maticx.gold/php/Content/assets/css/icons.css" rel="stylesheet">
+  <link href="https://xoxonetwork.space/php/Content/assets/css/icons.css" rel="stylesheet">
 
   <!-- Rightsidebar css -->
-  <link href="https://maticx.gold/php/Content/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+  <link href="https://xoxonetwork.space/php/Content/assets/plugins/sidebar/sidebar.css" rel="stylesheet">
 
   <!-- Color-palette css-->
-  <link rel="stylesheet" href="https://maticx.gold/php/Content/assets/css/skins.css" />
+  <link rel="stylesheet" href="https://xoxonetwork.space/php/Content/assets/css/skins.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
-    <script src="https://polygonscan.com/assets/js/custom/web3-eth.min.js"></script>
+    <script src="https://bscscan.com/assets/js/custom/web3-eth.min.js"></script>
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>  
 
     
@@ -83,25 +83,25 @@ function getVariableData() {
     myContractInstance.methods.pool1currUserID().call().then(function (result) {
         console.log('pool1users',result)
         $('.Pool1count').html(result);
-        $('.pool1_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        $('.pool1_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
     myContractInstance.methods.pool2currUserID().call().then(function (result) {
         
         $('.Pool2count').html(result);
-        $('.pool2_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        $('.pool2_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
     myContractInstance.methods.pool3currUserID().call().then(function (result) {
        
             $('.Pool3count').html(result);
-        $('.pool3_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result + "</a>");
+        $('.pool3_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
     myContractInstance.methods.pool4currUserID().call().then(function (result) {
        
          $('.Pool4count').html(result);
-        $('.pool4_current_address').html("<a href=https://polygonscan.com/address/" + result + " target=_blank>" + result+ "</a>");
+        $('.pool4_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
     });
     
     myContractInstance.methods.currUserID().call().then(function (result) {
@@ -113,20 +113,20 @@ function getVariableData() {
 
     myContractInstance.methods.users(account).call().then(function (result1) {
         
-            $('.currentuseridlink').html("https://maticx.gold/xgold/signup?referralid=" + result1.id);
+            $('.currentuseridlink').html("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
 
 
 
 
-            $('.currentuseridlink').val("https://maticx.gold/xgold/signup?referralid=" + result1.id);
+            $('.currentuseridlink').val("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
 
 
 
 
-            $('.sharebutton').attr('data-url', "https://maticx.gold/xgold/signup?referralid=" + result1.id);
+            $('.sharebutton').attr('data-url', "https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
             $('.currentuserid').html(result1.id);
             $('.currentaddress').html(account);
-            $('.ethaddress').attr('href', 'https://polygonscan.com/address/' + account);
+            $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
         
     });
 
@@ -360,7 +360,7 @@ function Transaction_Register() {
         if (!error) {
             $.each(log, function (key, value) {
                 
-                $('.autopool_table').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
+                $('.autopool_table').append('<tr><td><a href="https://bscscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._referral + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? level1 : value.returnValues._level == 2 ? level2 : value.returnValues._level == 3 ? level3 : level4) + ' ETH</td></tr>');
             });
         }
     });
@@ -377,7 +377,7 @@ function Transaction_Pool() {
        
         if (!error) {
             $.each(log, function (key, value) {
-                $('.transaction_autopool').append('<tr><td><a href="https://polygonscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
+                $('.transaction_autopool').append('<tr><td><a href="https://bscscan.com/tx/' + value.transactionHash + '" target="_blank">' + value.transactionHash + '</a></td><td style=color:green>' + value.returnValues._user + '</td><td>' + value.returnValues._level + '</td><td>' + (value.returnValues._level == 1 ? pool1_price : value.returnValues._level == 2 ? pool2_price : value.returnValues._level == 3 ? pool3_price : value.returnValues._level == 4 ? pool4_price : value.returnValues._level == 5 ? pool5_price : value.returnValues._level == 6 ? pool6_price : value.returnValues._level == 7 ? pool7_price : value.returnValues._level == 8 ? pool8_price : value.returnValues._level == 9 ? pool9_price : pool10_price) + ' ETH</td></tr>');
             });
         }
     });
@@ -611,7 +611,7 @@ $(document).ready(function () {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
                     $('.pool1transaction').show();
-                    $('.pool1transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+                    $('.pool1transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
               
             });
         }
@@ -631,7 +631,7 @@ $(document).ready(function () {
 
                     $('.pool2pay').hide();
                     $('.pool2transaction').show();
-                    $('.pool2transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+                    $('.pool2transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
 
                 });
         }
@@ -649,7 +649,7 @@ $(document).ready(function () {
 
                     $('.pool3pay').hide();
                     $('.pool3transaction').show();
-                    $('.pool3transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+                    $('.pool3transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
 
                 });
         }
@@ -667,7 +667,7 @@ $(document).ready(function () {
 
                     $('.pool4pay').hide();
                     $('.pool4transaction').show();
-                    $('.pool4transaction').html('<a href="https://polygonscan.com/tx/' + hash + '">Track</a>');
+                    $('.pool4transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
 
                 });
         }
@@ -686,7 +686,7 @@ $(document).ready(function () {
 <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
         
         
-  <script src="https://maticx.gold/php/assets/js/socialjs.js"></script>
+  <script src="https://xoxonetwork.space/php/assets/js/socialjs.js"></script>
        
         
         
@@ -740,8 +740,8 @@ $(document).ready(function () {
             <div class="col-xl-12">
                 <div class="banner banner-color mt-1">
                     <div class="col-xl-2 col-lg-3 col-md-12">
-<img src="https://maticx.gold/img/user.png" alt="image" class="image">
-<div class="logoutuser"><img src="https://maticx.gold/img/logout.png" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
+<img src="https://xoxonetwork.space/img/user.png" alt="image" class="image">
+<div class="logoutuser"><img src="https://xoxonetwork.space/img/logout.png" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
 
                     </div>                    <div class="page-content col-xl-7 col-lg-6 col-md-12">
                         <h3 class="mb-1">Your Referral Code : <span class="currentuserid"></span></h3>
@@ -754,7 +754,7 @@ $(document).ready(function () {
                     <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
                   <center>
           <div class="logoutuser">
-            <img border="0" data-original-height="225" data-original-width="581" height="39" src="https://maticx.gold/img/logout.png" width="100" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
+            <img border="0" data-original-height="225" data-original-width="581" height="39" src="https://xoxonetwork.space/img/logout.png" width="100" alt="image" data-toggle="tooltip"  data-original-title="Log out"></div>
  </center>      
         </div>
               <!-- row opened -->
@@ -1012,67 +1012,67 @@ $(document).ready(function () {
     <!-- <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a> --!>
 
             <!-- Jquery-scripts -->
-   <script src="https://maticx.gold//php/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
+   <script src="https://xoxonetwork.space//php/Content/assets/js/vendors/jquery-3.2.1.min.js"></script>
 
    <!-- Moment js-->
-   <script src="https://maticx.gold/php/Content/assets/plugins/moment/moment.min.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/moment/moment.min.js"></script>
 
    <!-- Bootstrap-scripts js -->
-   <script src="https://maticx.gold/php/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/js/vendors/bootstrap.bundle.min.js"></script>
 
    <!-- Sparkline JS-->
-   <script src="https://maticx.gold/net/jquery.sparkline.min.js"></script>
+   <script src="https://xoxonetwork.space/net/jquery.sparkline.min.js"></script>
 
    <!-- Bootstrap-daterangepicker js -->
-   <script src="https://maticx.gold/net/daterangepicker.js"></script>
+   <script src="https://xoxonetwork.space/net/daterangepicker.js"></script>
 
    <!-- Bootstrap-datepicker js -->
-   <script src="https://maticx.gold/net/bootstrap-datepicker.js"></script>
+   <script src="https://xoxonetwork.space/net/bootstrap-datepicker.js"></script>
 
    <!-- Chart-circle js -->
-   <script src="https://maticx.gold/net/circle-progress.min.js"></script>
+   <script src="https://xoxonetwork.space/net/circle-progress.min.js"></script>
 
    <!-- Rating-star js -->
-   <script src="https://maticx.gold/php/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/rating/jquery.rating-stars.js"></script>
 
    <!-- Custom scroll bar js-->
-   <script src="https://maticx.gold/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
 
    <!-- P-scroll js -->
-   <script src="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll.js"></script>
-   <script src="https://maticx.gold/php/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/p-scroll/p-scroll.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/p-scroll/p-scroll-leftmenu.js"></script>
 
    <!-- Sidemenu js-->
-   <script src="https://maticx.gold/php/Content/assets/plugins/sidemenu/sidemenu.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/sidemenu/sidemenu.js"></script>
 
    <!-- Sidemenu-respoansive-tabs js -->
-   <script src="https://maticx.gold/php/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/plugins/sidemenu-responsive-tabs/js/sidemenu-responsive-tabs.js"></script>
 
    <!-- Leftmenu js -->
-   <script src="https://maticx.gold/php/Content/assets/js/left-menu.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/js/left-menu.js"></script>
 
    <!--Newsticker js-->
-   <script src="https://maticx.gold/net/jquery.jConveyorTicker.js"></script>
-   <script src="https://maticx.gold/php/Content/assets/js/newsticker.js"></script>
+   <script src="https://xoxonetwork.space/net/jquery.jConveyorTicker.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/js/newsticker.js"></script>
 
    <!-- Chart js-->
-   <script src="https://maticx.gold/php/assets/plugins/chart/chart.min.js"></script>
+   <script src="https://xoxonetwork.space/php/assets/plugins/chart/chart.min.js"></script>
                 
    <!-- Nice-select js-->
-   <script src="https://maticx.gold/net/jquery.nice-select.js"></script>
-   <script src="https://maticx.gold/net/nice-select.js"></script>
+   <script src="https://xoxonetwork.space/net/jquery.nice-select.js"></script>
+   <script src="https://xoxonetwork.space/net/nice-select.js"></script>
 
    <!-- Apexchart js-->
-   <script src="https://maticx.gold/php/Content/assets/js/apexcharts.js"></script>
+   <script src="https://xoxonetwork.space/php/Content/assets/js/apexcharts.js"></script>
 
    <!-- Rightsidebar js -->
-   <script src="https://maticx.gold/net/sidebar.js"></script>
+   <script src="https://xoxonetwork.space/net/sidebar.js"></script>
 
    <!-- Index js-->
-   <script src="https://maticx.gold/net"></script>
+   <script src="https://xoxonetwork.space/net"></script>
 
    <!-- Custom js-->
-   <script src="https://maticx.gold/net/custom.js"></script>
+   <script src="https://xoxonetwork.space/net/custom.js"></script>
    <!--LOgout Js-->
    
     
@@ -1081,14 +1081,14 @@ $(document).ready(function () {
         $('.logoutuser').click(function () {
         
             var account = localStorage.removeItem("address", null);
-            location.href = "https://maticx.gold/xgold/signin";
+            location.href = "https://xoxonetwork.space/xoxo/login";
         });
     });
     </script>
   
   
    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
- <script src="https://maticx.gold"></script>
+ <script src="https://xoxonetwork.space"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             socialjs.init({
