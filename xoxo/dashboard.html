@@ -103,48 +103,48 @@ function getVariableData() {
          $('.Pool4count').html(result);
         $('.pool4_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
     });
-  myContractInstance.methods.pool1currUserID().call().then(function (result) {
-        console.log('pool1users',result)
+  myContractInstance.methods.pool5currUserID().call().then(function (result) {
+        console.log('pool5users',result)
         $('.Pool5count').html(result);
         $('.pool5_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool2currUserID().call().then(function (result) {
+    myContractInstance.methods.pool6currUserID().call().then(function (result) {
         
         $('.Pool6count').html(result);
         $('.pool6_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool3currUserID().call().then(function (result) {
+    myContractInstance.methods.pool7currUserID().call().then(function (result) {
        
             $('.Pool7count').html(result);
         $('.pool7_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool4currUserID().call().then(function (result) {
+    myContractInstance.methods.pool8currUserID().call().then(function (result) {
        
          $('.Pool8count').html(result);
         $('.pool8_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
     });
-  myContractInstance.methods.pool1currUserID().call().then(function (result) {
+  myContractInstance.methods.pool9currUserID().call().then(function (result) {
         console.log('pool1users',result)
         $('.Pool9count').html(result);
         $('.pool9_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool2currUserID().call().then(function (result) {
+    myContractInstance.methods.pool10currUserID().call().then(function (result) {
         
         $('.Pool10count').html(result);
         $('.pool10_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool3currUserID().call().then(function (result) {
+    myContractInstance.methods.pool11currUserID().call().then(function (result) {
        
             $('.Pool11count').html(result);
         $('.pool11_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool4currUserID().call().then(function (result) {
+    myContractInstance.methods.pool12currUserID().call().then(function (result) {
        
          $('.Pool12count').html(result);
         $('.pool12_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
@@ -272,7 +272,30 @@ function getPoolPaymentReceived() {
                 else if (level == 4) {
                     referraltotal = parseFloat(referraltotal) + pool4_price;
                 }
-                
+                else if (level == 5) {
+                                referraltotal = parseFloat(referraltotal) + pool5_price;
+                            }
+                            else if (level == 6) {
+                                referraltotal = parseFloat(referraltotal) + pool6_price;
+                            }
+                            else if (level == 7) {
+                                referraltotal = parseFloat(referraltotal) + pool7_price;
+                            }
+                            else if (level == 8) {
+                                referraltotal = parseFloat(referraltotal) + pool8_price;
+                            }
+                            else if (level == 9) {
+                                referraltotal = parseFloat(referraltotal) + pool9_price;
+                            }
+                            else if (level == 10) {
+                                referraltotal = parseFloat(referraltotal) + pool10_price;
+                            }
+               else if (level == 11) {
+                                referraltotal = parseFloat(referraltotal) + pool11_price;
+                            }
+                            else if (level == 12) {
+                                referraltotal = parseFloat(referraltotal) + pool12_price;
+                            }
 
 
                 $('.totalpoolpayment').html(Math.round(1000000 * (referraltotal)) / 1000000);
