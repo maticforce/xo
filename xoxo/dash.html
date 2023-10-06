@@ -162,14 +162,7 @@ function getVariableData() {
          $('.Pool12count').html(result);
         $('.pool12_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
     });
-    
-   myContractInstance.methods.currUserID().call().then(function (result) {
-                
-                   
-                        $('.TotalUsers').html(result);
-            
-                });
-                myContractInstance.methods.users(account).call().then(function (result1) {
+     myContractInstance.methods.users(account).call().then(function (result1) {
                     
                     $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
         
@@ -208,6 +201,9 @@ function getVariableData() {
                 DirectreferralCount();
             }
             
+            
+            
+  
 function getReferralCommission() {
     
 
