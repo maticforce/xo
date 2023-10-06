@@ -78,7 +78,7 @@
     background: -moz-linear-gradient(left, #A34FFE, #5934FC);
     background: -o-linear-gradient(left, #A34FFE, #5934FC);
 
-    background: #f9b421 url(/m3.png);
+    background: #f9b421 url(img/back.png);
     background-size: cover;
 }
 .login100-form {
@@ -176,7 +176,7 @@ function SigninPage(){
     //                $.notify({
     //                    icon: '',
     //                    title: "Congragulations! New User " + event.args._user + " Registered ",
-    //                    message: "Welcome to Matrix Pro "
+    //                    message: "Welcome to XoXo Network "
     //                }, {
     //                        type: 'minimalist',
     //                        placement: {
@@ -255,7 +255,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "/Home-Dashboard";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -354,7 +354,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "/Home-Dashboard";
+                        location.href = "https://xoxonetwork.space/xoxo/dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -379,7 +379,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "/Home-Dashboard";
+                            location.href = "https://xoxonetwork.space/xoxo/dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -412,7 +412,7 @@ $(document).ready(function () {
 
     </script>
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-    <script src="/Home-Dashboard/assets/js/socialjs.js"></script>
+    <script src="/js/socialjs.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function (event) {
             socialjs.init({
@@ -447,7 +447,7 @@ $(document).ready(function () {
                         <p class="error m-b-10 alert alert-danger" style="display:none">
 
                         </p>
-                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="/signup" class="text-white"> Sign up</a></p>
+                        <p class="m-b-15 text-right text-white">Don't have account ? <a href="xoxo/register" class="text-white"> Sign up</a></p>
 
                         <div class="container-login100-form-btn">
                             <button class="btn-success login100-form-btn" id="lgmbtn">
@@ -474,52 +474,25 @@ $(document).ready(function () {
                         
                 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="/Referral.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Referral</a>
+                    <a href="img/xoxo5.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Referral</a>
                 </div>
                 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="/poolflow1.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Poolflow1</a>
-                </div>
-                
-                <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="/Profit-table.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Profit-table</a>
+                    <a href="img/xoxo6.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  Profit-table</a>
                 </div>
 
                 <div class="purchase-token-btn text-center" style="margin-bottom:20px;margin-top:20px;">
-                    <a href="/AutoPool.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
+                    <a href="/xoxo7.png" target="_blank" class="btn btn-lg btn-gradient-blue btn-round btn-glow"><i class="fa fa-file-pdf-o" ></i> &nbsp;  AutoPool</a>
                 </div>
                         
                     </form>
 
-                
-
-                    <div class="col-xl-12 col-lg-12 col-md-12 text-center d-flex d-block m-t-10">
-                        <div class="row">
-                            <p class="text-white col-lg-12">Social Links</p>
-                            <div class="socialjs col-lg-12 m-t-10">
-
-                                <a class="sharebutton facebook btn " target="_blank" style="background-color:#3b5998;color:white" href="https://www.facebook.com/ProfessionalMatrix"><i class=" fa fa-facebook"></i></a>
-
-                                <a class="sharebutton twitter btn" target="_blank" style="background-color:#00acee;color:white" href="https://twitter.com/INHERIT38092481"><i class=" fa fa-twitter"></i> </a>
-                                <a class="sharebutton linkedin btn" target="_blank" style="background-color:#0e76a8;color:white" href="https://www.linkedin.com/in/professionalmatrix2022"><i class=" fa fa-linkedin"></i> </a>
-
-                                <a class="sharebutton telegram btn" target="_blank" style="background-color:#0088cc;color:white" href="https://t.me/matrixprovip"><i class="fa fa-telegram"></i> </a>
-                                <a class="sharebutton telegram btn" target="_blank" style="background-color:#ff0000;color:white" href="https://www.youtube.com/"><i class="fa fa-youtube"></i> </a>
-                                <a class="sharebutton telegram btn" target="_blank" style="background-color:#dd2a7b ;color:white" href="https://www.instagram.com/"><i class="fa fa-instagram"></i> </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-
                 </div> 
                 <div class="login100-more ">
                     <div class="col-lg-12 m-t-30">
-                        <a href="/matrixlogo.png"> <img src="/matrixlogo.png" class="w-100" /></a>
+                        <a href="img/xoxo9.png"> <img src="/matrixlogo.png" class="w-100" /></a>
                     </div>
                     <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
-                        <a href="https://twitterscan.com/view/r/z43n" target="_blank" class="m-b-5 btn btn-success" style="background-color:#0012dd;border-color:#b4b401">NFT Airdrop</a>
-                        <a href="https://matrixpro.nftify.network/nft/matrixpro" target="_blank" class="m-b-5 btn btn-success" style="background-color:#0012dd;border-color:#b4b401">Buy NFT</a>
                         <a href="https://metamask.io/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#c011db;border-color:#c0c90d">Download Metamask</a>
                         <a href="https://trustwallet.com/" target="_blank" class="m-b-5 btn btn-info" style="background-color:#f2aa23;border-color:#a213ce">Download Trust Wallet</a>
                     </div>
