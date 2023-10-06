@@ -146,7 +146,7 @@ $(document).ready(function () {
             myContractInstance.methods.users(account).call().then(function (result) {
                 if (result[0]) {
                     localStorage.setItem("address", account);
-                    location.href = "/signup2";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('You need to register first');
@@ -175,7 +175,7 @@ $(document).ready(function () {
                 if (result1.status == "0x1") {
                     alert("success")
                     localStorage.setItem("address", account);
-                    location.href = "/singin2";
+                    location.href = "https://xoxonetwork.space/xoxo/dashboard";
                 }
                 else {
                     $('.error').html('Transaction Failed');
@@ -245,7 +245,7 @@ $(document).ready(function () {
                     if (receipt.status) {
                         alert("success")
                         localStorage.setItem("address", account);
-                        location.href = "/Home-Dashboard2";
+                        location.href = "https://xoxonetwork.space/xoxo/dashboard";
                     }
                     else {
                         $('.error').html('Transaction Failed');
@@ -270,7 +270,7 @@ $(document).ready(function () {
                        
 
                             localStorage.setItem("address", add);
-                            location.href = "/Home-Dashboard2";
+                            location.href = "https://xoxonetwork.space/xoxo/dashboard";
                         }
                         else {
                             $('.error').html('You need to register first');
@@ -368,13 +368,14 @@ $(document).ready(function () {
                     </form>
 
                 </div> 
-                <div class="login100-more "><br><br><br>
+                <div class="login100-more "><br><br>
                     <div class="col-lg-12 m-t-30">
                         <a href="https://xoxonetwork.space"> <img src="/img/xoxo9.png" class="w-100" /></a>
-                    </div><br><br><br>
+                    </div><br><br>
                     <div class="w-100 m-t-100 m-l-auto m-r-auto text-center download-buttons">
                         <a href="https://metamask.io/" target="_blank" class="m-b-5 btn btn-success" style="background-color:#c011db;border-color:#c0c90d">Download Metamask</a>
                         <a href="https://xoxonetwork.space/xoxonetwork.pdf" target="_blank" class="m-b-5 btn btn-info" style="background-color:#f2aa23;border-color:#a213ce">Download Business</a>
+                   <br><br>
                     </div>
                 </div>
             </div>
