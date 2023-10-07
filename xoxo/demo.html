@@ -15,10 +15,10 @@
         }
     </script> 
 
-    <link rel="shortcut icon" type="image/x-icon" href="/matrixlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/xoxo9.png">
 
     <!-- Title -->
-    <title>MATRIX PRO BSC</title>
+    <title>XoXo Network</title>
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
@@ -93,59 +93,6 @@
     </style>
 
 </head>
-<body class="app">
-
-    <!-- Loader -->
-    <div id="loading">
-        <img src="/loader.svg" class="loader-img" alt="Loader">
-    </div>
-
-    <!-- PAGE -->
-    <div class="page">
-        <div class="page-main">
-
-            <!-- Top-header opened -->
-            <div class="header-main header sticky">
-                <div class="app-header header top-header navbar-collapse ">
-                    <div class="container-fluid">
-                        <div class="d-flex">
-                            <a class="header-brand" href="https://matrixpro.vip/Home-Dashboard">
-                                <h3 style="margin-top: 16px;color: #141670;">MATRIX PRO BSC</h3>
-                                
-                               
-                            </a>
-                            <a href="#" data-toggle="sidebar" class="nav-link icon toggle"><i class="fa fa-align-justify fs-20"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         </div>
-            <!-- Top-header closed -->
-            <!-- Sidebar menu-->
-            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-            <aside class="app-sidebar">
-                <div class="side-tab-body p-0 border-0" id="sidemenu-Tab">
-                    <div class="first-sidemenu">
-                        <div class="line-animations">
-                            <ul class="resp-tabs-list hor_1">
-                                
-                                <li class="resp-tab-active active"><a href="https://matrixpro.vip/Home-Dashboard"><span class="side-menu__icon"></span><img src="/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
-                                <li class="autopool"><a href="https://matrixpro.vip/Autopool"><span class="side-menu__icon"></span><img src="/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
-                                <li class="trans"><a href="https://matrixpro.vip/Transaction"><span class="side-menu__icon"></span><img src="/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
-                                <li class="team2"><a href="https://matrixpro.vip/Team"><span class="side-menu__icon"></span><img src="/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
-                                <li class="media2"><a href="https://matrixpro.vip/Media"><span class="side-menu__icon"></span><img src="/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
-                             
-                                <li class="logoutuser"><span class="side-menu__icon"></span><img src="/m6.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Log out"></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-            <!-- Sidemenu closed -->
-            <!-- App-content opened -->
-            <!-- App-content closed -->
-        </div>
-        
         <script> 
             var totalearned = 0;
             function getVariableData() {
@@ -222,21 +169,17 @@
                 });
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                    $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').html("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
         
-                    $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     
                                 
         
         
-                    $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
-        
-                    $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').val("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
         
         
-                    $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+        
+                    $('.currentuseridlink').attr('data-url', "https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
                     $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
