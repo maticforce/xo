@@ -143,19 +143,9 @@ function getVariableData() {
         $('.pool10_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
     });
 
-    myContractInstance.methods.pool11currUserID().call().then(function (result) {
-       
-            $('.Pool11count').html(result);
-        $('.pool11_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool12currUserID().call().then(function (result) {
-       
-         $('.Pool12count').html(result);
-        $('.pool12_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
-    });
+   
     
-   myContractInstance.methods.currUserID().call().then(function (result) {
+    myContractInstance.methods.currUserID().call().then(function (result) {
                 
                    
                         $('.TotalUsers').html(result);
@@ -163,21 +153,21 @@ function getVariableData() {
                 });
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                    $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').html("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
         
-                    $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
                     
                                 
         
         
-                    $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').val("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
         
-                    $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
         
         
-                    $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
-                    $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlink').attr('data-url', "https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
+                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
+                    $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
                     $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
