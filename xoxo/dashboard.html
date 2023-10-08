@@ -1530,7 +1530,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="center">
                                 <p class="mb-2 h6">Matrix 11 Users</p>
-                            <h2 class="mb-1 "><span class="Pool11count"></span></h2>
+                            <h2 class="mb-1 "><span class="Pool11count">0</span></h2>
                             </div>
                             <div class=" my-auto ml-auto">
                                 <div class="chart-wrapper text-center">
@@ -1549,7 +1549,7 @@ $(document).ready(function () {
                         <div class="d-flex">
                             <div class="center">
                                 <p class="mb-2 h6">Matrix 12 Users</p>
-                            <h2 class="mb-1 "><span class="Pool12count"></span></h2>
+                            <h2 class="mb-1 "><span class="Pool12count">0</span></h2>
                             </div>
 
                             <div class=" my-auto ml-auto">
@@ -1759,8 +1759,8 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">2 BNB</h1>
                         <p class="mb-5 pool11sequencue" style="display: none;">Your Sequence Number : <strong id="pool11sequencue"></strong> </p>
-                        <button type="button" class="btn btn-success pool11pay">Enter</button>
-                        <p class="pool11transaction btn btn-primary disabled">Not Eligible</p>
+                        <button type="button" class="btn btn-success pool11pay">Coming Soon</button>
+                        <p class="pool11transaction btn btn-primary disabled">Coming Soon</p>
                     </div>
                 </div>
             </div>
@@ -1777,8 +1777,8 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">5 BNB</h1>
                         <p class="mb-5 pool12sequencue" style="display: none;">Your Sequence Number : <strong id="pool12sequencue"></strong> </p>
-                        <button type="button" class="btn btn-success pool8pay">Enter</button>
-                        <p class="pool12transaction btn btn-primary disabled">Not Eligible</p>
+                        <button type="button" class="btn btn-success pool8pay">Coming Soon</button>
+                        <p class="pool12transaction btn btn-primary disabled">Coming Soon</p>
                     </div>
                 </div>
             </div>
@@ -1786,17 +1786,7 @@ $(document).ready(function () {
         <!-- row closed -->
     </div>
 </div>
-     <!-- Banner opened -->
-    <div style="background-color:#f67306;">
-        <div class="row">
-<center>
-          <div class="logoutuser">
-            <img border="0" data-original-height="225" data-original-width="581" height="39" src="https://xoxonetwork.space/img/logout.png" width="100" alt="image" data-toggle="tooltip"  data-original-title="Log out"><br>
-    <br></div>
- </center>  
-                    </div>
-                </div>
-            </div>
+    
                            
 <style>
     .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay, .pool11pay, .pool12pay {
@@ -1807,7 +1797,25 @@ $(document).ready(function () {
         display: none
     }
 </style>
-
+<!-- Footer opened -->
+<footer class="footer-main leftmenu-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6  mt-2 mb-2 p-l-10">
+                <span class="p-r-10">Contract address</span>
+                <a href="https://bscscan.com/address/0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7" class="text-success" target="_blank">
+                    0xac2faCfD2C3f8B70b67Ca8Bb9b12F7BC7aBA65F7 <i class="fa fa-external-link"></i>
+                </a>
+            </div>
+            <div class="col-md-6  mt-2 mb-2 text-center">
+<div class="logoutuser">
+            <img border="0" data-original-height="225" data-original-width="581" height="39" src="https://xoxonetwork.space/img/logout.png" width="100" alt="image" data-toggle="tooltip"  data-original-title="Log out"><br>
+    <br></div>            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer closed -->
+</div>
 
     <!-- Back-to-top -->
     <!-- <a href="#top" id="back-to-top"><i class="fa fa-angle-double-up"></i></a> --!>
@@ -1867,40 +1875,29 @@ $(document).ready(function () {
    <script src="https://xoxonetwork.space/php/Content/assets/js/apexcharts.js"></script>
 
    <!-- Rightsidebar js -->
-   <script src="https://xoxonetwork.space/net/sidebar.js"></script>
+<script src="https://xoxonetwork.space/signup/sidebar.js"></script>
 
-   <!-- Index js-->
-   <script src="https://xoxonetwork.space/net"></script>
+<!-- Custom js-->
+<script src="https://xoxonetwork.space/signup/custom.js"></script>
+<!--LOgout Js-->
 
-   <!-- Custom js-->
-   <script src="https://xoxonetwork.space/net/custom.js"></script>
-   <!--LOgout Js-->
-   
-    
-    <script> 
-     $(document).ready(function() {
-        $('.logoutuser').click(function () {
-        
-            var account = localStorage.removeItem("address", null);
-            location.href = "https://xoxonetwork.space/xoxo/login";
-        });
-    });
-    </script>
-  
-  
-   <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
- <script src="https://xoxonetwork.space"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            socialjs.init({
-                container: '.socialjs',
-                https: true
-            });
-        });
-        
-      </script>
-  </section>
-    </div>
-        </div>
-  </head>
+<script src="https://xoxonetwork.space/jquery.waypoints.min.js"></script>
+
+<script src="https://xoxonetwork.space/theme.js"></script>
+
+<script src="https://xoxonetwork.space/flipclock.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/3.0.3/main/clipboard-polyfill.js"> </script>
+
+
+<script> 
+$(document).ready(function() {
+$('.logoutuser').click(function () {
+
+    var account = localStorage.removeItem("address", null);
+    location.href = "https://xoxonetwork.space/xoxo/login";
+});
+});
+</script>
+</body>
 </html>
