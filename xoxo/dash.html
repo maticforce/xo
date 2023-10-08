@@ -160,17 +160,7 @@
                         $('.Pool10count').html(result);
                     $('.pool10_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
                 });
-            myContractInstance.methods.pool11currUserID().call().then(function (result) {
-       
-            $('.Pool11count').html(result);
-        $('.pool11_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
-    });
-
-    myContractInstance.methods.pool12currUserID().call().then(function (result) {
-       
-         $('.Pool12count').html(result);
-        $('.pool12_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
-    });
+            
             
             
                 myContractInstance.methods.currUserID().call().then(function (result) {
