@@ -15,7 +15,7 @@
         }
     </script> 
 
-    <link rel="shortcut icon" type="image/x-icon" href="/matrixlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="https://xoxonetwork.space/img/xoxo9.png">
 
     <!-- Title -->
     <title>XoXo Network</title>
@@ -93,7 +93,7 @@
     </style>
 
 </head>
-<body class="app">
+<!--<body class="app">--!>
 
         <script> 
             var totalearned = 0;
@@ -160,7 +160,17 @@
                         $('.Pool10count').html(result);
                     $('.pool10_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
                 });
-            
+            myContractInstance.methods.pool11currUserID().call().then(function (result) {
+       
+            $('.Pool11count').html(result);
+        $('.pool11_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result + "</a>");
+    });
+
+    myContractInstance.methods.pool12currUserID().call().then(function (result) {
+       
+         $('.Pool12count').html(result);
+        $('.pool12_current_address').html("<a href=https://bscscan.com/address/" + result + " target=_blank>" + result+ "</a>");
+    });
             
             
                 myContractInstance.methods.currUserID().call().then(function (result) {
@@ -1239,7 +1249,7 @@ function myFunction1() {
             <div class="col-xl-12">
                 <div class="banner banner-color mt-0">
                     <div class="col-xl-2 col-lg-3 col-md-12">
-                        <img src="/img/xoxo.png" alt="image" class="image">
+                        <img src="/img/xoxo9.png" alt="image" class="image">
                     </div>
 
 
@@ -1802,11 +1812,11 @@ function myFunction1() {
 
 
 <style>
-    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay {
+    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay, .pool11pay, .pool12pay {
         display: none
     }
 
-    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status {
+    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status, .pool11status .pool12status {
         display: none
     }
 </style>
