@@ -11,14 +11,14 @@
 
         if (account == null) {
             alert("You are not Logged In. Please Login first..!!");
-           location.href = "https://xoxonetwork.space/xoxo/login";
+           location.href = "https://matrixpro.vip/signin";
         }
     </script> 
 
-    <link rel="shortcut icon" type="image/x-icon" href="/img/xoxo9.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/matrixlogo.png">
 
     <!-- Title -->
-    <title>XoXo Network</title>
+    <title>MATRIX PRO BSC</title>
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,700" rel="stylesheet">
@@ -93,6 +93,59 @@
     </style>
 
 </head>
+<body class="app">
+
+    <!-- Loader -->
+    <div id="loading">
+        <img src="/loader.svg" class="loader-img" alt="Loader">
+    </div>
+
+    <!-- PAGE -->
+    <div class="page">
+        <div class="page-main">
+
+            <!-- Top-header opened -->
+            <div class="header-main header sticky">
+                <div class="app-header header top-header navbar-collapse ">
+                    <div class="container-fluid">
+                        <div class="d-flex">
+                            <a class="header-brand" href="https://matrixpro.vip/Home-Dashboard">
+                                <h3 style="margin-top: 16px;color: #141670;">MATRIX PRO BSC</h3>
+                                
+                               
+                            </a>
+                            <a href="#" data-toggle="sidebar" class="nav-link icon toggle"><i class="fa fa-align-justify fs-20"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+            <!-- Top-header closed -->
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+            <aside class="app-sidebar">
+                <div class="side-tab-body p-0 border-0" id="sidemenu-Tab">
+                    <div class="first-sidemenu">
+                        <div class="line-animations">
+                            <ul class="resp-tabs-list hor_1">
+                                
+                                <li class="resp-tab-active active"><a href="https://matrixpro.vip/Home-Dashboard"><span class="side-menu__icon"></span><img src="/homepage.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Home"></a></li>
+                                <li class="autopool"><a href="https://matrixpro.vip/Autopool"><span class="side-menu__icon"></span><img src="/m2.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Autopool"></a></li>
+                                <li class="trans"><a href="https://matrixpro.vip/Transaction"><span class="side-menu__icon"></span><img src="/m3.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Transations"></a></li>
+                                <li class="team2"><a href="https://matrixpro.vip/Team"><span class="side-menu__icon"></span><img src="/m4.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Team"></a></li>
+                                <li class="media2"><a href="https://matrixpro.vip/Media"><span class="side-menu__icon"></span><img src="/m5.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Media"></a></li>
+                             
+                                <li class="logoutuser"><span class="side-menu__icon"></span><img src="/m6.png" class="side_menu_img svg-1" alt="image" data-toggle="tooltip"  data-original-title="Log out"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Sidemenu closed -->
+            <!-- App-content opened -->
+            <!-- App-content closed -->
+        </div>
+        
         <script> 
             var totalearned = 0;
             function getVariableData() {
@@ -169,17 +222,21 @@
                 });
                 myContractInstance.methods.users(account).call().then(function (result1) {
                     
-                    $('.currentuseridlink').html("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
+                    $('.currentuseridlink').html("https://matrixpro.vip/signup?referralid=" + result1.id);
         
+                    $('.currentuseridlinknew').html("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     
                                 
         
         
-                    $('.currentuseridlink').val("https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
+                    $('.currentuseridlink').val("https://matrixpro.vip/signup?referralid=" + result1.id);
+        
+                    $('.currentuseridlinknew').val("https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
         
         
-        
-                    $('.currentuseridlink').attr('data-url', "https://xoxonetwork.space/xoxo/register?referralid=" + result1.id);
+                    $('.currentuseridlink').attr('data-url', "https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.currentuseridlinknew').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
+                    $('.sharebutton').attr('data-url', "https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid=" + result1.id);
                     $('.currentuserid').html(result1.id);
                     $('.currentaddress').html(account);
                     $('.ethaddress').attr('href', 'https://bscscan.com/address/' + account);
@@ -311,7 +368,7 @@
                 accounting: []
             };
             var str = "";
-            //'0x702c8DDF3ED63193051fD4870e063162B45bB063'
+            //'0xeb97027979cb9e6aeeb2dc9de9db090bc007889c'
             function Directreferral() {
                 
                 var events = myContractInstance.getPastEvents('regLevelEvent', {filter:{ _referrer: account }, 'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
@@ -470,7 +527,7 @@
     var account = localStorage.getItem("address");
     
     var abi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referral","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getMoneyForLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_receiver","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"getPoolPayment","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":true,"internalType":"address","name":"_referrer","type":"address"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regLevelEvent","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"_user","type":"address"},{"indexed":false,"internalType":"uint256","name":"_level","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"_time","type":"uint256"}],"name":"regPoolEntry","type":"event"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"LEVEL_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"buyPool1","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool10","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool2","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool3","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool4","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool5","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool6","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool7","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool8","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"buyPool9","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getEthBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"ownerWallet","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool10activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool10currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool10userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool10users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool1activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool1currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool1userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool1users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool2activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool2currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool2userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool2users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool3activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool3currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool3userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool3users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool4activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool4currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool4userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool4users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool5activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool5currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool5userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool5users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool6activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool6currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool6userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool6users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool7activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool7currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool7userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool7users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool8activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool8currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool8userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool8users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool9activeUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pool9currUserID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"pool9userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"pool9users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"payment_received","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_referrerID","type":"uint256"}],"name":"regUser","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"requests","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"unlimited_level_price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"userList","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"bool","name":"isExist","type":"bool"},{"internalType":"uint256","name":"id","type":"uint256"},{"internalType":"uint256","name":"referrerID","type":"uint256"},{"internalType":"uint256","name":"referredUsers","type":"uint256"}],"stateMutability":"view","type":"function"}];
-    var address = "0x702c8DDF3ED63193051fD4870e063162B45bB063";
+    var address = "0xeb97027979cb9e6aeeb2dc9de9db090bc007889c";
 var MyContract;
 window.addEventListener('load', function () {
     if (typeof web3 !== 'undefined') {
@@ -884,7 +941,7 @@ $(document).ready(function () {
         try {
 
             ethereum.enable();
-            myContractInstance1.methods.buyPool1().send({ from: account, value: 200000000000000000, gasprice: 5 })
+            myContractInstance1.methods.buyPool1().send({ from: account, value: 50000000000000000, gasprice: 5 })
                 .on('transactionHash', function (hash) {
                     console.log('------->',hash)
                     $('.pool1pay').hide();
@@ -1136,12 +1193,11 @@ function myFunction1() {
     <div class="section">
 
         <!-- Banner opened -->
-            <div style="background-color:#f67306;">
-        <div class="row">
+        <div class="row"></div>
             <div class="col-xl-12">
                 <div class="banner banner-color mt-0">
                     <div class="col-xl-2 col-lg-3 col-md-12">
-                        <img src="/img/xoxo9" alt="image" class="image">
+                        <img src="/new_message.svg" alt="image" class="image">
                     </div>
 
 
@@ -1155,19 +1211,551 @@ function myFunction1() {
 
                         <p class="mb-0 fs-16">Referral link: <span class="currentuseridlink"></span> &emsp; <span class="btn btn-warning" onclick="myFunction()"> <i class="fa fa-copy"></i></span></p>
 
+                        <p class="mb-0 fs-16">Trust Wallet Referral link: <span class="currentuseridlinknew"></span> &emsp; <span class="btn btn-warning" onclick="myFunction1()"> <i class="fa fa-copy"></i></span></p>
 
 
                         <p class="mb-0 fs-16"><a class="ethaddress" href=" " target="_blank">Your BNB address: <span class="currentaddress"></span> <i class="fa fa-external-link"></i></a></p> 
                     </div>        
 
-                    
+                    <div class="col-xl-3 col-lg-3 col-md-3 text-right d-flex d-block">
+                        <div class="socialjs">
+
+                    <a class="sharebutton facebook btn " target="_blank" style="background-color:#0851ee;color:white" data-basecount="" data-sharetype="facebook" data-text="Earn more than 600 BNB from 0.3 BNB" title="Share this on Facebook" data-related=" " href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-facebook"></i></a>
+
+                    <a class="sharebutton twitter btn" target="_blank" style="background-color:#00ee77;color:white" data-basecount="" data-sharetype="twitter" data-text="Earn more than 600 BNB from 0.3 BNB" data-via="elonmusk" data-via="dapp_com" data-via="RyanNguyenHC" data-related=" " title="Share this on Twitter" href="https://link.trustwallet.com/open_url?coin_id=60&url=https://matrixpro.vip/signup?referralid="><i class=" fa fa-twitter"></i> </a>
+                     
                     
                 </div>
             </div>
         </div>
         <!-- Banner opened -->
         <!-- Banner opened -->
-       
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-lg-12">
+                <div class="card bg-dark1">
+                    <div class="js-conveyor-example">
+                        <ul class="news-crypto">
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="/user.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Total Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="TotalUsers"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="/1.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 1 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool1count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="/2.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 2 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool2count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-flex">
+                                            <div class="">
+                                                <img src="/3.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 3 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool3count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/4.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 4 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool4count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/5.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 5 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool5count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/6.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 6 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool6count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/7.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 7 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool7count"></span></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/8.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 8 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool8count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/9.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 9 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool9count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="row">
+                                        <div class=" d-flex">
+                                            <div class="">
+                                                <img src="/10.png" class="w-7 h-7" alt="">
+                                            </div>
+                                            <div class="ml-3">
+                                                <p class="text-white mb-1 fs-12">Pool 10 Users</p>
+                                                <div class="h5 m-0 fs-14 text-warning"><span class="Pool10count"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-primary">
+                    <div class="card-body bg-gradient-success">
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">Referral Earning </p>
+                                <h2 class="mb-1 "><span class="totalreferral">0</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="/m3.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-gradient-secondary">
+                    <div class="card-body text-white">
+
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">AutoPool Earning BNB</p>
+                                <h2 class="mb-1 "><span class="totalpoolpayment">0</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="/d2.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden bg-teal">
+                    <div class="card-body text-white">
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">Direct Team</p>
+                                <h2 class="mb-1 "><span class="referralcount">0</span></h2>
+                            </div>
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="/d4.png" class="h-7" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-xl-3">
+                <div class="card overflow-hidden" style="background-color:#004172;color:#fff;">
+
+                    <div class="card-body text-white">
+                        <div class="d-flex">
+                            <div class="">
+                                <p class="mb-2 h6">Indirect Team</p>
+                                <h2 class="mb-1 "><span class="indirect_referralcount">0</span></h2>
+                            </div>
+
+                            <div class=" my-auto ml-auto">
+                                <div class="chart-wrapper text-center">
+                                    <img src="/d5.png" class="h-7" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row hidden-xs">
+            <div class="col-md-12 col-lg-12 col-xl-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Bitcoin / USD Rate</div>
+                        <div class="card-options">
+                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                            <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="pl-3 pr-3 pb-0">
+                        <script type="text/javascript">
+                            baseUrl = "https://widgets.cryptocompare.com/";
+                            var scripts = document.getElementsByTagName("script");
+                            var embedder = scripts[scripts.length - 1];
+                            var cccTheme = { "Tabs": { "activeBorderColor": "#6c63e8" } };
+                            (function () {
+                                var appName = encodeURIComponent(window.location.hostname);
+                                if (appName == "") { appName = "local"; }
+                                var s = document.createElement("script");
+                                s.type = "text/javascript";
+                                s.async = true;
+                                var theUrl = baseUrl + 'serve/v3/coin/chart?fsym=BNB&tsyms=USD';
+                                s.src = theUrl + (theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                                embedder.parentNode.appendChild(s);
+                            })();
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-sm-12 col-xl-4 col-md-12 ">
+                <div class="card">
+                    <div class="card-body p-0" style="height:700px;overflow:auto">
+                        <a class="twitter-timeline" href="https://twitter.com/INHERIT38092481?ref_src=twsrc%5Etfw">Tweets by Twitter</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
+        <!-- row opened -->
+        <div class="row ">
+            <div class="col-md-3 col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool1status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h2 class="card-title font-weight-bold">AutoPool 1</h2>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.2 BNB</h1>
+                        <p class="mb-5">Globally <strong>2</strong> people pays <br /> <strong>0.2</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool1sequencue" style="display: none;">Your position number : <strong id="pool1sequencue"></strong> </p>
+                        <p class="mb-5 pool1paying" style="display: none;">Current Paying Sequence number: <strong id="pool1paying"></strong></p>
+                        <button type="button" class="btn btn-primary pool1pay">Enter</button>
+                        <p class="pool1transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool2status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 2</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">0.4 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>0.4</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool2sequencue" style="display: none;">Your position number : <strong id="pool2sequencue"></strong> </p>
+                        <p class="mb-5 pool2paying" style="display: none;">Current Paying Sequence number: <strong id="pool2paying"></strong></p>
+                        <button type="button" class="btn btn-danger pool2pay">Enter</button>
+                        <p class="pool2transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool3status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 3</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">1 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>1</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool3sequencue" style="display: none;">Your position number : <strong id="pool3sequencue"></strong> </p>
+                        <p class="mb-5 pool3paying" style="display: none;">Current Paying Sequence number: <strong id="pool3paying"></strong></p>
+                        <button type="button" class="btn btn-success pool3pay">Enter</button>
+                        <p class="pool3transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool4status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 4</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">2 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>2</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool4sequencue" style="display: none;">Your position number : <strong id="pool4sequencue"></strong> </p>
+                        <p class="mb-5 pool4paying" style="display: none;">Current Paying Sequence number: <strong id="pool4paying"></strong></p>
+                        <button type="button" class="btn btn-success pool4pay">Enter</button>
+                        <p class="pool4transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool5status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left "><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 5</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">4 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>4</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool5sequencue" style="display: none;">Your position number : <strong id="pool5sequencue"></strong> </p>
+                        <p class="mb-5 pool5paying" style="display: none;">Current Paying Sequence number: <strong id="pool5paying"></strong></p>
+              
+                        <button type="button" class="btn btn-success pool5pay">Enter</button>
+                        <p class="pool5transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool6status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 6</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">10 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>10</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool6sequencue" style="display: none;">Your position number : <strong id="pool6sequencue"></strong> </p>
+                        <p class="mb-5 pool6paying" style="display: none;">Current Paying Sequence number: <strong id="pool6paying"></strong></p>
+                        <button type="button" class="btn btn-success pool6pay">Enter</button>
+                        <p class="pool6transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool7status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 7</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">20 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>20</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool7sequencue" style="display: none;">Your position number : <strong id="pool7sequencue"></strong> </p>
+                        <p class="mb-5 pool7paying" style="display: none;">Current Paying Sequence number: <strong id="pool7paying"></strong></p>
+                        <button type="button" class="btn btn-success pool7pay">Enter</button>
+                        <p class="pool7transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool8status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 8</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">40 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>40</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool8sequencue" style="display: none;">Your position number : <strong id="pool8sequencue"></strong> </p>
+                        <p class="mb-5 pool8paying" style="display: none;">Current Paying Sequence number: <strong id="pool8paying"></strong></p>
+                        <button type="button" class="btn btn-success pool8pay">Enter</button>
+                        <p class="pool8transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offset-lg-3 col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool9status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 9</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">100 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>100</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool9sequencue" style="display: none;">Your position number : <strong id="pool9sequencue"></strong> </p>
+                        <p class="mb-5 pool9paying" style="display: none;">Current Paying Sequence number: <strong id="pool9paying"></strong></p>
+                        <button type="button" class="btn btn-success pool9pay">Enter</button>
+                        <p class="pool9transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-3  col-xs-6">
+                <div class="card text-center overflow-hidden">
+                    <div class="pool10status">
+                        <div class="card-status"></div>
+                        <div class="ribbon ribbon-top-left"><span class="bg-danger">New</span></div>
+                    </div>
+                    <div class="card-header text-center mx-auto">
+                        <h3 class="card-title font-weight-bold">AutoPool 10</h3>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="pricing-card-title mb-5">200 BNB</h1>
+                        <p class="mb-5">Globally <strong>3</strong> people pays  <br /><strong>200</strong> BNB each</p>
+                        <p class="mb-5">No Referral necessary</p>
+                        <p class="mb-5 pool10sequencue" style="display: none;">Your position number : <strong id="pool10sequencue"></strong> </p>
+                        <p class="mb-5 pool10paying" style="display: none;">Current Paying Sequence number: <strong id="pool10paying"></strong></p>
+                        <button type="button" class="btn btn-success pool10pay">Enter</button>
+                        <p class="pool10transaction btn btn-primary disabled">Not Eligible</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row closed -->
     </div>
 </div>
     
@@ -1192,8 +1780,8 @@ function myFunction1() {
         <div class="row">
             <div class="col-md-6  mt-2 mb-2 p-l-10">
                 <span class="p-r-10">Contract address</span>
-                <a href="https://bscscan.com/address/0x702c8DDF3ED63193051fD4870e063162B45bB063" class="text-success" target="_blank">
-                    0x702c8DDF3ED63193051fD4870e063162B45bB063 <i class="fa fa-external-link"></i>
+                <a href="https://bscscan.com/address/0xeb97027979cb9e6aeeb2dc9de9db090bc007889c" class="text-success" target="_blank">
+                    0xeb97027979cb9e6aeeb2dc9de9db090bc007889c <i class="fa fa-external-link"></i>
                 </a>
             </div>
             <div class="col-md-6  mt-2 mb-2 text-center">
@@ -1284,7 +1872,7 @@ $(document).ready(function() {
 $('.logoutuser').click(function () {
 
     var account = localStorage.removeItem("address", null);
-    location.href = "https://xoxonetwork.space/xoxo/login";
+    location.href = "https://matrixpro.vip/signin";
 });
 });
 </script>
