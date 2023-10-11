@@ -238,9 +238,6 @@ function getPoolPaymentReceived() {
     var pool8_price = 0.80;
     var pool9_price = 0.90;
     var pool10_price = 1;
-    var pool11_price = 2;
-    var pool12_price = 5;
-
     var referraltotal = parseFloat(0);
 
     var events = myContractInstance.getPastEvents('getPoolPayment', {filter : { _receiver: account },  'fromBlock': 0, 'toBlock': 'latest'}, function (error, log) {
@@ -279,13 +276,7 @@ function getPoolPaymentReceived() {
                 else if (level == 10) {
                     referraltotal = parseFloat(referraltotal) + pool10_price;
                }
-               else if (level == 11) {
-                    referraltotal = parseFloat(referraltotal) + pool11_price;
-              }
-              else if (level == 12) {
-                    referraltotal = parseFloat(referraltotal) + pool12_price;
-              }
-
+              
 
                 $('.totalpoolpayment').html(Math.round(1000000 * (referraltotal)) / 1000000);
             });
@@ -444,8 +435,7 @@ function Transaction_Pool() {
         var pool8_price = 0.80;
         var pool9_price = 0.90;
         var pool10_price = 1;
-        var pool11_price = 2;
-        var pool12_price = 5;
+       
        
         if (!error) {
             $.each(log, function (key, value) {
@@ -873,70 +863,7 @@ myContractInstance.methods.pool10users(account).call().then(function (result) {
 
 }
 
-function checkPool11() {
 
-
-    myContractInstance.methods.pool11users(account).call().then(function (result) {
-        console.log("pool11users",result)
-        if(result[1] > 0){
-        $('#pool11sequencue').text(result[1])
-        $('#pool11sequencue').show();
-        $('.pool11sequencue').show();}
-            if (!result[0]) {
-                $('.pool11pay').show();
-                $('.pool11transaction').hide();
-            }
-            else if (result[2] == 4) {
-                $('.pool11status').show();
-                $('.pool11status .card-status').addClass('bg-success');
-                $('.pool11status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool11transaction').html('No. of Payments Received ' + result[2]);
-
-
-            }
-            else if (result[2] < 4) {
-                $('.pool11status').show();
-                $('.pool11status .card-status').addClass('bg-warning');
-                $('.pool11status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool11transaction').html('No. of Payments Received ' + result[2]); $('.currentautopoolno').html(11);
-            }
-
-
-
-        
-    });
-
-}
-
-
-function checkPool12() {
-    myContractInstance.methods.pool12users(account).call().then(function (result) {
-        if(result[1] > 0){
-        $('#pool12sequencue').text(result[1])
-        $('#pool12sequencue').show();
-        $('.pool12sequencue').show();}
-       
-            if (!result[0]) {
-                $('.pool12pay').show();
-                $('.pool12transaction').hide();
-            }
-            else if (result[2] == 4) {
-                $('.pool12status').show();
-                $('.pool12status .card-status').addClass('bg-success');
-                $('.pool12status .ribbon').addClass('text-success').html('<span class="bg-success">Completed</span>');
-                $('.pool12transaction').html('No. of Payments Received ' + result[2]);
-
-
-            }
-            else if (result[2] < 4) {
-                $('.pool12status').show();
-                $('.pool12status .card-status').addClass('bg-warning');
-                $('.pool12status .ribbon').addClass('text-warning').html('<span class="bg-warning">Active</span>');
-                $('.pool12transaction').html('No. of Payments Received' + result[2]); $('.currentautopoolno').html(12);
-            }
-    });
-
-}
 $(document).ready(function () {
     $('.pool1pay').click(function (demo) {
        
@@ -1128,42 +1055,6 @@ $(document).ready(function () {
             alert('Please download and install Metamask and Loggin to account');
         }
     });
- $('.pool11pay').click(function () {
-        try {
-            ethereum.enable();
-           
-            myContractInstance1.methods.buyPool11().send({ from: account, value: 2000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool11pay').hide();
-                    $('.pool11transaction').show();
-                    $('.pool11transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
- $('.pool12pay').click(function () {
-        try {
-            ethereum.enable();
-           
-            myContractInstance1.methods.buyPool12().send({ from: account, value: 5000000000000000000, gas: 300000 })
-                .on('transactionHash', function (hash) {
-
-                    $('.pool12pay').hide();
-                    $('.pool12transaction').show();
-                    $('.pool12transaction').html('<a href="https://bscscan.com/tx/' + hash + '">Track</a>');
-
-                });
-        }
-        catch (err) {
-            alert('Please download and install Metamask and Loggin to account');
-        }
-    });
-
-
 });
 </script>
 
@@ -1756,7 +1647,6 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">2 BNB</h1>
                         <p class="mb-5 pool11sequencue" style="display: none;">Your Sequence Number : <strong id="pool11sequencue"></strong> </p>
-                        <button type="button" class="btn btn-success pool11pay">Coming Soon</button>
                         <p class="pool11transaction btn btn-primary disabled">Coming Soon</p>
                     </div>
                 </div>
@@ -1774,7 +1664,6 @@ $(document).ready(function () {
                     <div class="card-body">
                         <h1 class="pricing-card-title mb-5">5 BNB</h1>
                         <p class="mb-5 pool12sequencue" style="display: none;">Your Sequence Number : <strong id="pool12sequencue"></strong> </p>
-                        <button type="button" class="btn btn-success pool8pay">Coming Soon</button>
                         <p class="pool12transaction btn btn-primary disabled">Coming Soon</p>
                     </div>
                 </div>
@@ -1786,11 +1675,11 @@ $(document).ready(function () {
     
                            
 <style>
-    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay, .pool11pay, .pool12pay {
+    .pool1pay, .pool2pay, .pool3pay, .pool4pay, .pool5pay, .pool6pay, .pool7pay, .pool8pay, .pool9pay, .pool10pay {
         display: none
     }
 
-    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status, .pool11status, .pool12status {
+    .pool1status, .pool2status, .pool3status, .pool4status, .pool5status, .pool6status, .pool7status, .pool8status, .pool9status, .pool10status {
         display: none
     }
 </style>
